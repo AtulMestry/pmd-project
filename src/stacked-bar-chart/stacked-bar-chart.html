@@ -144,7 +144,8 @@
             series: seriesData
         });*/
 var optionsStack;
-$.getJSON('https://predixpurchasereqsourcems-mm.run.aws-usw02-pr.ice.predix.io/purReqSource', function(data1) {
+//$.getJSON('https://predixpurchasereqsourcems-mm.run.aws-usw02-pr.ice.predix.io/purReqSource', function(data1) {
+$.getJSON('../../sample-data/stacked-bar-data.json', function(data1) {
 		//optionsStack.series[0].data = testData;
 		optionsStack = {
 		chart: {
@@ -184,7 +185,8 @@ $.getJSON('https://predixpurchasereqsourcems-mm.run.aws-usw02-pr.ice.predix.io/p
 
 	    });
 
-	$.getJSON('https://predixpurchasereqsourcems-mm.run.aws-usw02-pr.ice.predix.io/purReqSource', function(data1) {
+	//$.getJSON('https://predixpurchasereqsourcems-mm.run.aws-usw02-pr.ice.predix.io/purReqSource', function(data1) {
+	$.getJSON('../../sample-data/stacked-bar-data.json', function(data1) {
 		//optionsStack.series[0].data = testData;
 		var chartStack = new Highcharts.Chart(optionsStack);
 	    });
