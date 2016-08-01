@@ -36,10 +36,12 @@
 
 	</style>
     
+    <!--
     <paper-input label="Search Keywords" type="search">
     	<paper-icon-button prefix icon="search"></paper-icon-button>
   		<paper-icon-button suffix icon="clear"></paper-icon-button>
 	</paper-input>
+	-->
 	
 	<paper-textarea label="Selection">	
 	</paper-textarea><br>
@@ -53,17 +55,26 @@
 	
 	
 	<template is="dom-bind">
-	
-<!--
+<!--	
 	<iron-ajax auto url="../../sample-data/plant-data.json" handle-as="json" last-response="{{plants}}"></iron-ajax>
--->	
+-->
+<!--
 	<iron-ajax auto url="https://predixdashboardtablems-mm.run.aws-usw02-pr.ice.predix.io/fetchReqDashboardBuyer" handle-as="json" last-response="{{plants}}"></iron-ajax>
-
+-->
 	By Plant
 	<select id="filterByPlant">
-	<template is="dom-repeat" items="{{plants}}" as="plant">
+	
+	<template is="dom-repeat" items="[[plants]]" as="plant">
 		<option value="{{plant.plant}}">{{plant.plantDesc}}</option>
 	</template>
+	
+	<!--
+	<iron-list items="[[plants]]" as="plant">
+	<template>
+    <option value="{{plant.plant}}">{{plant.plantDesc}}</option>
+	</iron-list>	
+	-->
+	
 	</select>
 	</template>	
 	

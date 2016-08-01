@@ -224,8 +224,8 @@ $.getJSON('../../sample-data/stacked-bar-data.json', function(data1) {
 			}
 		*/
 		
-$.getJSON(urlStatic, function(data1) {
-//$.getJSON(urlStack, function(data1) {
+//$.getJSON(urlStatic, function(data1) {
+$.getJSON(urlStack, function(data1) {
 		//optionsStack.series[0].data = testData;
 		
 		
@@ -250,7 +250,11 @@ $.getJSON(urlStatic, function(data1) {
         	enabled: false
         },
             title: {
-                text: 'Stacked column chart'
+                text: 'Requisition By Purchasing Group Manager',
+                style:{
+                	"fontSize": "12px"
+                }
+                
             },
             xAxis: {
                 categories: ['source', 'no source']
@@ -271,6 +275,9 @@ $.getJSON(urlStatic, function(data1) {
             legend: {
 		    reversed: true
 		},
+		colors: [
+			'#00A1EA','#FE3737'
+		],				
 		plotOptions: {
 		    series: {
 			stacking: 'normal'

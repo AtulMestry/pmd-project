@@ -10,12 +10,11 @@
 <dom-module id="bar-chart-card">
   <template is="dom-bind">	
 
-<!--
 <iron-ajax auto url="../../sample-data/summary-table.json" handle-as="json" last-response="{{tableData1}}"></iron-ajax>
--->
 
+<!--
 <iron-ajax auto url="https://predixtotalsblockms-mm.run.aws-usw02-pr.ice.predix.io/TotalsBlock" handle-as="json" last-response="{{tableData1}}"></iron-ajax>
-
+-->
 
 		<style type="text/css">
 		
@@ -142,7 +141,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Age Classification'
+		    text: 'Age Classification',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['Aging','Ok'],
@@ -203,7 +205,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Source Assignment'
+		    text: 'Source Assignment',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['No Source','Source'],
@@ -238,7 +243,7 @@ table.summary tr th:last-child {
 			}
 			*/
 	
-	
+
     	/*
 	    $.getJSON(urlStatic, function(data) {
          
@@ -264,7 +269,7 @@ table.summary tr th:last-child {
 				options2.series[0].data = data;
 				var chart2 = new Highcharts.Chart(options2);
 	    	});
-	   
+	  
 	   
       }
     			    

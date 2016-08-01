@@ -79,7 +79,10 @@
 					enabled: false
 				},
 				title: {
-					text: 'Requisition By Buyer'
+					text: 'Requisition By Buyer',
+                style:{
+                	"fontSize": "12px"
+                }
 				},
 				xAxis: {
 					gridLineWidth: 1,
@@ -185,6 +188,7 @@
         		bubbleOptions.series[0].data = data;
         		var chart = new Highcharts.Chart(bubbleOptions);
     		});
-    	}		
+    	}
+    	    		
   </script>
 </dom-module>

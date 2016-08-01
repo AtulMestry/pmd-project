@@ -54,7 +54,7 @@ myLayout.registerComponent( 'filterPanel', function( container, componentState )
 
 
 myLayout.registerComponent( 'scatterPlot', function( container, componentState ){
-    container.getElement().html( '<bubble-chart-card></bubble-chart-card>' );
+    container.getElement().html( '<scatter-chart-card></scatter-chart-card>' );
 });
 
 

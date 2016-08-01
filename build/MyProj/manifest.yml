@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: pmd
+  - name: pmd-poc
     buildpack: predix_openresty_buildpack
     path: build/MyProj
     memory: 64M

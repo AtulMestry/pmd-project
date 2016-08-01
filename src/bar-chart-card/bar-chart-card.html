@@ -141,7 +141,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Age Classification'
+		    text: 'Age Classification',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['Aging','Ok'],
@@ -202,7 +205,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Source Assignment'
+		    text: 'Source Assignment',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['No Source','Source'],
@@ -238,7 +244,7 @@ table.summary tr th:last-child {
 			*/
 	
 
-    	
+    	/*
 	    $.getJSON(urlStatic, function(data) {
          
          options1.series[0].data = data;
@@ -251,9 +257,9 @@ table.summary tr th:last-child {
 			
 			
 	    });
-		
+		*/
 			
-		/*
+		
 		$.getJSON(urlAge, function(data) {
       		options1.series[0].data = data;
 				var chart1 = new Highcharts.Chart(options1);
@@ -263,7 +269,7 @@ table.summary tr th:last-child {
 				options2.series[0].data = data;
 				var chart2 = new Highcharts.Chart(options2);
 	    	});
-	   */
+	  
 	   
       }
     			    

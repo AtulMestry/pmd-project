@@ -79,7 +79,10 @@
 					enabled: false
 				},
 				title: {
-					text: 'Requisition By Buyer'
+					text: 'Requisition By Buyer',
+                style:{
+                	"fontSize": "12px"
+                }
 				},
 				xAxis: {
 					gridLineWidth: 1,
@@ -185,6 +188,17 @@
         		bubbleOptions.series[0].data = data;
         		var chart = new Highcharts.Chart(bubbleOptions);
     		});
-    	}		
+    	}
+    	
+    	function newRandomColor() {
+        var color = [];
+        color.push((Math.random() * 255).toFixed());
+        color.push((Math.random() * 255).toFixed());
+        color.push((Math.random() * 255).toFixed());
+        color.push((Math.random()).toFixed(2));
+        var text = 'rgba(' + color.join(',') + ')';
+        console.log(text);
+        return text;
+    }		
   </script>
 </dom-module>

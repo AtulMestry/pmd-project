@@ -1,16 +1,20 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/px-card/px-card.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
 <link rel="import" href="../../bower_components/px-data-table/px-data-table.html">
+<link rel="import" href="../../bower_components/vaadin-grid/vaadin-grid.html">
+<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
 
 <dom-module id="heatmap-buyer-card">
   <template is="dom-bind">	
-
 <!--
 <iron-ajax auto url="../../sample-data/plant-data.json" handle-as="json" last-response="{{plants}}"></iron-ajax>
 -->
 
-<iron-ajax auto url="https://predixdashboardtablems-mm.run.aws-usw02-pr.ice.predix.io/fetchReqDashboardBuyer" handle-as="json" last-response="{{plants}}"></iron-ajax>
+<iron-ajax auto url="https://predixdashboardtablems-mm.run.aws-usw02-pr.ice.predix.io/fetchReqDashboardBuyer" handle-as="json" last-response="{{plants}}" loading="{{loading}}"></iron-ajax>
+
 
 		<style type="text/css">
 		
@@ -24,14 +28,64 @@
 			}
 			-->
 			
+ #heatmap-buyer {
+ 	width: 540px;
+   height: 300px;
+    font-family: "GE Inspira";
+	font-size: 11px;
+	
+  }
+  
+  .v-grid .v-grid-header th.v-grid-cell {
+  background: blue;
+  color: #222;
+}
 
+</style>
+  
+  <style is="custom-style">
+  
+  vaadin-grid {
+    --vaadin-grid-header-row-height: 25px;
+    --vaadin-grid-row-height: 25px;
+    --vaadin-grid-header-color: blue;
+  }
+  			
+  			
 		</style>
-
+<!--
     	<px-card id="heatmap-buyer-card1" icon='demo-icon' chevron >
            	<px-data-table id="heatmap-buyer" filterable selectable table-data="{{plants}}" horizontal>					         	
            	</px-data-table>
       </px-card>
-    
+-->
+   
+  
+  
+<paper-card heading="Card Title">
+  <div class="card-content">
+	
+	<vaadin-grid id="heatmap-buyer" items="{{plants}}"  >
+	
+        <table>
+          <colgroup>
+            <col name="plant" />
+            <col name="plantDesc" />
+            <col name="aging01"/>
+            <col name="aging2"/>
+            <col name="aging34"/>
+            <col name="aging5plus"/>
+            <col name="totalReq"/>
+          </colgroup> 
+        </table>
+        
+      </vaadin-grid> 
+  </div>
+  <div class="card-actions">
+    <paper-button>Some action</paper-button>
+  </div>
+</paper-card>  
+  
     
 
   </template>
@@ -56,7 +110,7 @@
     
     
     document.addEventListener('WebComponentsReady', function() {
-
+/*
           document.getElementById("heatmap-buyer").addEventListener("px-row-click", function(e) {
             var clickedRow = e.detail.row;
             
@@ -78,6 +132,27 @@
            
            		
           });
+*/          
+
+					var grid = grid || document.querySelector('vaadin-grid');
+					grid.addEventListener('selected-items-changed', function() {
+ 					
+ 					var selected = grid.selection.selected();
+  					
+  						if (selected.length == 1) {
+        						
+        					grid.getItem(selected, function(error, selectedPlant) {
+					      if (!error) {
+          					refreshBubbleChart(selectedPlant.plant);
+			   				 refreshBarChart(selectedPlant.plant);
+   							 refreshStackedChart(selectedPlant.plant);
+        					}
+        					
+      					});
+      					
+      				}
+  					});
+
         });
 
   </script>

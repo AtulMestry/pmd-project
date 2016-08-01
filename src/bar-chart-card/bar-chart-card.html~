@@ -141,7 +141,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Age Classification'
+		    text: 'Age Classification',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['Aging','Ok'],
@@ -202,7 +205,10 @@ table.summary tr th:last-child {
 			'#FE3737','#00A1EA'
 		],	
 		title: {
-		    text: 'Source Assignment'
+		    text: 'Source Assignment',
+                style:{
+                	"fontSize": "12px"
+                }
 		},
 		xAxis: {
 		    categories: ['No Source','Source'],

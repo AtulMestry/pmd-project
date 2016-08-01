@@ -2,34 +2,51 @@
 	{
 		"plant":"P01",
 		"plantDesc":"P01-GE Austria After Market",
-		"Aging_0-1":150,
-		"Aging_2":250,
-		"Aging_3-4":50,
-		"Aging_5":80	
+		"aging01":150,
+		"aging2":250,
+		"aging34":50,
+		"aging5plus":80	
 	},
 	{
 		"plant":"P02",
-		"plantDesc":"P02-GE Austria After Market",
-		"Aging_0-1":250,
-		"Aging_2":150,
-		"Aging_3-4":100,
-		"Aging_5":180	
+		"plantDesc":"P02-GE US After Market",
+		"aging01":250,
+		"aging2":150,
+		"aging34":100,
+		"aging5plus":180	
 	},
 	{
 		"plant":"P03",
-		"plantDesc":"P03-GE Austria After Market",
-		"Aging_0-1":400,
-		"Aging_2":500,
-		"Aging_3-4":450,
-		"Aging_5":600	
+		"plantDesc":"P03-GE HK After Market",
+		"aging01":400,
+		"aging2":500,
+		"aging34":450,
+		"aging5plus":600	
 	},
 	{
 		"plant":"P04",
-		"plantDesc":"P04-GE Austria After Market",
-		"Aging_0-1":100,
-		"Aging_2":300,
-		"Aging_3-4":500,
-		"Aging_5":200,
+		"plantDesc":"P04-GE Ind After Market",
+		"aging01":100,
+		"aging2":300,
+		"aging34":500,
+		"aging5plus":200,
+		"Aging_6":80	
+	},
+	{
+		"plant":"P06",
+		"plantDesc":"P03-GE HK After Market",
+		"aging01":400,
+		"aging2":500,
+		"aging34":450,
+		"aging5plus":600	
+	},
+	{
+		"plant":"P07",
+		"plantDesc":"P04-GE Ind After Market",
+		"aging01":100,
+		"aging2":300,
+		"aging34":500,
+		"aging5plus":200,
 		"Aging_6":80	
 	}
 ]
